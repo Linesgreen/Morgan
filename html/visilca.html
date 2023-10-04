@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Владик НЯф</title>
+  </head>
+  <body>
+    <h1>Привет, мир!</h1>
+    <p><strong>Моя первая веб-страничка</strong>.</p>
+    <p><em>Добавим-ка еще параграф</em></p>
+    <script>
+      const words = ["программа", "макака", "прекрасный", "оладушек"];
+
+      let word = words[Math.floor(Math.random() * words.length)];
+
+      let answerArray = [];
+      for (let i = 0; i < word.length; i += 1) {
+        answerArray[i] = "_";
+      }
+
+      let remainingLetters = word.length;
+
+      while (remainingLetters > 0) {
+        alert(answerArray.join(" "));
+        let guess = prompt("Угадай букву").toLowerCase();
+        if (guess === null) {
+          break;
+        } else if (guess.length !== 1) {
+          alert("Нужна одну буква, глупая бебра");
+        } else {
+          for (let j = 0; j < word.length; j += 1) {
+            if (word[j] === guess || word[j] === "_") {
+              answerArray[j] = guess;
+              remainingLetters -= 1;
+            }
+          }
+        }
+      }
+
+      alert(answerArray.join(""));
+      alert("супер, загаданное слово было " + word);
+    </script>
+  </body>
+</html>
