@@ -11,8 +11,14 @@
     <h1 id="main-heading">Привет, мир!</h1>
 
     <script>
-       var newHeadingText = prompt("ВВеди новоый заголовок");
-       $("#main-heading").text(newHeadingText);
+       $("h1").text("Этот текст скоро исчезнет пуф").slideUp(3000).slideDown(2000);
+    </script>
+    <script>
+         function timeUp() {
+            alert("Time is ower!");
+        }
+
+        setTimeout(timeUp, 3000);
     </script>
 </body>
 </html>
